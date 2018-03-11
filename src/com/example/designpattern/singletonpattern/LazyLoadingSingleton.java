@@ -1,6 +1,6 @@
 package com.example.designpattern.singletonpattern;
 
-public class DbSingleton {
+public class LazyLoadingSingleton {
 
 
     /**
@@ -9,18 +9,18 @@ public class DbSingleton {
      * Creational design pattern : Eg :- Spring beans , logger, runtime
      * instance variable is a private
      */
-    private static DbSingleton instance = null;
+    private static LazyLoadingSingleton instance = null;
 
 
     /**
      * Lazy loading be checking for null
      */
-    public static DbSingleton getInstance() {
+    public static LazyLoadingSingleton getInstance() {
         if (instance==null){
 
-            synchronized (DbSingleton.class){
+            synchronized (LazyLoadingSingleton.class){
                 if(instance==null)
-                    instance= new DbSingleton();
+                    instance= new LazyLoadingSingleton();
             }
         }
 
@@ -30,7 +30,7 @@ public class DbSingleton {
     /**
      * private so that no other class can use the constructor
      */
-    private DbSingleton(){
+    private LazyLoadingSingleton(){
 
     }
 }

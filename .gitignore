@@ -3,6 +3,8 @@
 *.iml
 out
 gen
+lib
+.idea/*.xml
 
 target/
 
